@@ -1,3 +1,5 @@
+%undefine _debugsource_packages
+
 %define         pkgname cosmic-applet
 %define         bin cosmic-applet
 %define         appname com.system76.Cosmic
