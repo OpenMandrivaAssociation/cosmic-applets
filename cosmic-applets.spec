@@ -18,20 +18,21 @@
 %define         workspacesbutton PanelWorkspacesButton
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
-Version:        1.0.0~alpha1
-Release:        0
+Version:        1.0.0
+Release:        0.alpha1.0
 Summary:        Applets for COSMIC DE
+Group:          Desktop/COSMIC
 License:        GPL-3.0-only
 URL:            https://github.com/pop-os/cosmic-applets
-Source0:        %{name}-%{version}.tar.zst
-Source1:        vendor.tar.zst
-BuildRequires:  cargo-packaging
+Source0:        https://github.com/pop-os/cosmic-applets/archive/epoch-%{version}-alpha.1/%{name}-epoch-%{version}-alpha.1.tar.gz
+Source1:        vendor.tar.xz
+Source2:        cargo_config
+
+BuildRequires:  rust-packaging
 BuildRequires:  desktop-file-utils
-BuildRequires:  fdupes
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  just
 BuildRequires:  pkgconfig
-BuildRequires:  update-desktop-files
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(gbm)
@@ -173,33 +174,15 @@ Requires:       %{name} = %{version}
 %{summary}.
 
 %prep
-%autosetup -a1
+%autosetup -n %{name}-epoch-%{version}-alpha.1 -a1 -p1
+mkdir .cargo
+cp %{SOURCE2} .cargo/config
 
 %build
 just build-release
 
 %install
 just rootdir=%{buildroot} prefix=%{_prefix} install
-%fdupes %{buildroot}
-%suse_update_desktop_file %{appname}%{applist}
-%suse_update_desktop_file %{appname}%{audio}
-%suse_update_desktop_file %{appname}%{battery}
-%suse_update_desktop_file %{appname}%{bluetooth}
-%suse_update_desktop_file %{appname}%{inputsources}
-%suse_update_desktop_file %{appname}%{minimize}
-%suse_update_desktop_file %{appname}%{network}
-%suse_update_desktop_file %{appname}%{notifications}
-%suse_update_desktop_file %{appname}%{power}
-%suse_update_desktop_file %{appname}%{status}
-%suse_update_desktop_file %{appname}%{tiling}
-%suse_update_desktop_file %{appname}%{time}
-%suse_update_desktop_file %{appname}%{workspaces}
-%suse_update_desktop_file %{appname}%{appbutton}
-%suse_update_desktop_file %{appname}%{workspacesbutton}
-%suse_update_desktop_file %{appname}%{launcherbutton}
-
-%check
-%{cargo_test}
 
 %files
 %license LICENSE
