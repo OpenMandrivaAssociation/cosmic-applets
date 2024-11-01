@@ -190,6 +190,7 @@ just rootdir=%{buildroot} prefix=%{_prefix} install
 %license LICENSE
 %{_bindir}/%{name}
 %{_datadir}/cosmic
+%{_datadir}/metainfo/com.system76.CosmicApplets.metainfo.xml
 
 %files -n %{pkgname}-app-list
 %{_bindir}/cosmic-app-list
