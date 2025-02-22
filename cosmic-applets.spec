@@ -22,12 +22,13 @@
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
 Version:        1.0.0
-Release:        0.alpha5.1
+%define beta alpha.6
+Release:        %{?beta:0.%{beta}.}1
 Summary:        Applets for COSMIC DE
 Group:          Desktop/COSMIC
 License:        GPL-3.0-only
 URL:            https://github.com/pop-os/cosmic-applets
-Source0:        https://github.com/pop-os/cosmic-applets/archive/epoch-%{version}-alpha.5.1/%{name}-epoch-%{version}-alpha.5.1.tar.gz
+Source0:        https://github.com/pop-os/cosmic-applets/archive/epoch-%{version}%{?beta:-%{beta}}/%{name}-epoch-%{version}%{?beta:-%{beta}}.tar.gz
 Source1:        vendor.tar.xz
 Source2:        cargo_config
 
@@ -184,7 +185,7 @@ Requires:       %{name} = %{version}
 %{summary}.
 
 %prep
-%autosetup -n %{name}-epoch-%{version}-alpha.5.1 -a1 -p1
+%autosetup -n %{name}-epoch-%{version}%{?beta:-%{beta}} -a1 -p1
 mkdir .cargo
 cp %{SOURCE2} .cargo/config
 
