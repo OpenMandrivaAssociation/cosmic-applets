@@ -274,7 +274,7 @@ just rootdir=%{buildroot} prefix=%{_prefix} install
 %{_bindir}/%{bin}-workspaces
 %{_datadir}/applications/%{appname}%{workspaces}.desktop
 %{_datadir}/applications/%{appname}%{workspacesbutton}.desktop
-%{_datadir}/icons/hicolor/scalable/apps/%{appname}%{workspaces}-symbolic.svg
+#{_datadir}/icons/hicolor/scalable/apps/%{appname}%{workspaces}-symbolic.svg
 %{_datadir}/icons/hicolor/scalable/apps/%{appname}%{workspacesbutton}.svg
 
 %files -n %{pkgname}-panel-button
