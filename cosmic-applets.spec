@@ -22,7 +22,7 @@
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
 Version:        1.0.0
-%define beta beta.5
+%define beta beta.6
 Release:        %{?beta:0.%{beta}.}1
 Summary:        Applets for COSMIC DE
 Group:          Desktop/COSMIC
