@@ -43,6 +43,11 @@ replace-with = "vendored-sources"
 git = "https://github.com/pop-os/dbus-settings-bindings"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/pop-os/dbus-settings-bindings?branch=precise-capturing"]
+git = "https://github.com/pop-os/dbus-settings-bindings"
+branch = "precise-capturing"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/pop-os/freedesktop-icons"]
 git = "https://github.com/pop-os/freedesktop-icons"
 replace-with = "vendored-sources"
