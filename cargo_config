@@ -23,12 +23,12 @@ git = "https://github.com/pop-os/cosmic-protocols//"
 branch = "main"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/pop-os/cosmic-settings-daemon"]
-git = "https://github.com/pop-os/cosmic-settings-daemon"
+[source."git+https://github.com/pop-os/cosmic-settings"]
+git = "https://github.com/pop-os/cosmic-settings"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/pop-os/cosmic-settings-subscriptions"]
-git = "https://github.com/pop-os/cosmic-settings-subscriptions"
+[source."git+https://github.com/pop-os/cosmic-settings-daemon"]
+git = "https://github.com/pop-os/cosmic-settings-daemon"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/cosmic-text.git"]
@@ -41,11 +41,6 @@ replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/dbus-settings-bindings"]
 git = "https://github.com/pop-os/dbus-settings-bindings"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/pop-os/dbus-settings-bindings?branch=precise-capturing"]
-git = "https://github.com/pop-os/dbus-settings-bindings"
-branch = "precise-capturing"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/freedesktop-icons"]
