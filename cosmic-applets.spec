@@ -14,6 +14,7 @@
 %define         notifications AppletNotifications
 %define         power AppletPower
 %define         status AppletStatusArea
+%define         statusnotifier StatusNotifierWatcher
 %define         tiling AppletTiling
 %define         time AppletTime
 %define         workspaces AppletWorkspaces
@@ -21,7 +22,7 @@
 %define         workspacesbutton PanelWorkspacesButton
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
-Version:        1.0.2
+Version:        1.2.0
 #define beta beta.7
 Release:        %{?beta:0.%{beta}.}1
 Summary:        Applets for COSMIC DE
@@ -201,6 +202,9 @@ just rootdir=%{buildroot} prefix=%{_prefix} install
 %{_bindir}/%{name}
 %{_datadir}/cosmic
 %{_datadir}/metainfo/com.system76.CosmicApplets.metainfo.xml
+%{_userunitdir}/com.system76.CosmicStatusNotifierWatcher.service
+%{_datadir}/dbus-1/services/com.system76.CosmicStatusNotifierWatcher.service
+%{_datadir}/dbus-1/system.d/com.system76.CosmicSettings.Applet.NetworkManager.SecretAgent.conf
 
 %files -n %{pkgname}-a11y
 %{_bindir}/cosmic-applet-a11y
