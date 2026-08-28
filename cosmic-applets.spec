@@ -22,7 +22,7 @@
 %define         workspacesbutton PanelWorkspacesButton
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
-Version:        1.5.0
+Version:        1.7.0
 #define beta beta.7
 Release:        %{?beta:0.%{beta}.}1
 Summary:        Applets for COSMIC DE
