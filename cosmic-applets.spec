@@ -12,6 +12,7 @@
 %define         minimize AppletMinimize
 %define         network AppletNetwork
 %define         notifications AppletNotifications
+%define         osk AppletOsk
 %define         power AppletPower
 %define         status AppletStatusArea
 %define         statusnotifier StatusNotifierWatcher
@@ -22,7 +23,7 @@
 %define         workspacesbutton PanelWorkspacesButton
 %define         launcherbutton PanelLauncherButton
 Name:           cosmic-applets
-Version:        1.7.0
+Version:        1.11.0
 #define beta beta.7
 Release:        %{?beta:0.%{beta}.}1
 Summary:        Applets for COSMIC DE
@@ -126,6 +127,15 @@ BuildArch:      noarch
 Requires:       %{name} = %{version}
 
 %description -n %{pkgname}-notifications
+%{summary}.
+
+%package -n %{pkgname}-osk
+Summary:        %{summary}
+BuildArch:      noarch
+Requires:       %{name} = %{version}
+Requires:       cosmic-osk
+
+%description -n %{pkgname}-osk
 %{summary}.
 
 %package -n %{pkgname}-power
@@ -255,6 +265,10 @@ just rootdir=%{buildroot} prefix=%{_prefix} install
 %{_datadir}/applications/%{appname}%{notifications}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{appname}%{notifications}-symbolic.svg
 %{_datadir}/icons/hicolor/scalable/status/cosmic-applet-notification-*.svg
+
+%files -n %{pkgname}-osk
+%{_bindir}/cosmic-applet-osk
+%{_datadir}/applications/%{appname}%{osk}.desktop
 
 %files -n %{pkgname}-power
 %{_bindir}/%{bin}-power
